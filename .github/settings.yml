@@ -1,0 +1,6 @@
+_extends: .github
+repository:
+  name: remark-update-legacy-badge-markers
+  description: remark plugin to update legacy badge markers to the modern zone convention
+  homepage: 'https://npm.im/@form8ion/remark-update-legacy-badge-markers'
+  private: false
