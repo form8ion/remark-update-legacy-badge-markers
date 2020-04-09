@@ -37,8 +37,32 @@ $ npm install @form8ion/remark-update-legacy-badge-markers --save-prod
 
 ### Example
 
+#### Import
+
 ```javascript
-import remarkUpdateLegacyBadgeMarkers from '@form8ion/remark-update-legacy-badge-markers';
+import fs from 'fs';
+import remark from 'remark';
+import updateLegacyBadgeMarkers from '@form8ion/remark-update-legacy-badge-markers';
+```
+
+#### Execute
+
+```javascript
+remark()
+  .use(updateLegacyBadgeMarkers)
+  .process(
+    `# project-name
+
+<!-- status badges -->
+
+<!-- consumer badges  -->
+
+<!-- contribution badges -->
+`,
+    (err, file) => {
+      fs.writeFileSync(`${process.cwd()}/README.md`, file);
+    }
+  );
 ```
 
 ## Contributing
