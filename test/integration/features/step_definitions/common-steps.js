@@ -6,6 +6,8 @@ When('a node is processed', async function () {
   remark()
     .use(updateLegacyBadgeMarkers)
     .process(this.readmeContent, (err, file) => {
+      if (err) throw err;
+
       this.resultingContent = file.contents;
     });
 });

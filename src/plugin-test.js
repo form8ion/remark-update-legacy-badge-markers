@@ -2,7 +2,7 @@ import sinon from 'sinon';
 import {assert} from 'chai';
 import any from '@travi/any';
 import * as childrenModifier from '../thirdparty-wrappers/unist-util-modify-children';
-import markerUpgrader from './marker-replacer';
+import markerUpgrader from './conditional-marker-replacer';
 import plugin from './plugin';
 
 suite('plugin', () => {

@@ -1,79 +1,60 @@
-import any from '@travi/any';
 import {assert} from 'chai';
-import replaceMarkers from './marker-replacer';
+import any from '@travi/any';
+import replaceMarkerWithZone from './marker-replacer';
 
-suite('marker replacer modifier', () => {
+suite('marker replacer', () => {
   const originalParentChildren = any.listOf(any.simpleObject);
+  const badgeGroupType = any.word();
 
-  test('that a legacy status marker is replaced by modern zones', () => {
+  test('that the marker node is replaced with a zone in the parent node\'s children', () => {
     const parentChildren = [...originalParentChildren];
     const nodeIndex = any.integer({max: parentChildren.length});
 
     assert.equal(
-      replaceMarkers({type: 'html', value: '<!-- status badges -->'}, nodeIndex, {children: parentChildren}),
+      replaceMarkerWithZone(
+        {children: parentChildren},
+        nodeIndex,
+        badgeGroupType
+      ),
       nodeIndex + 1
     );
     assert.deepEqual(
       parentChildren,
       [
         ...originalParentChildren.slice(0, nodeIndex),
-        {type: 'html', value: '<!--status-badges start -->'},
-        {type: 'html', value: '<!--status-badges end -->'},
+        {type: 'html', value: `<!--${badgeGroupType}-badges start -->`},
+        {type: 'html', value: `<!--${badgeGroupType}-badges end -->`},
         ...originalParentChildren.slice(nodeIndex + 1)
       ]
     );
   });
 
-  test('that a legacy consumer marker is replaced by modern zones', () => {
-    const parentChildren = [...originalParentChildren];
-    const nodeIndex = any.integer({max: parentChildren.length});
+  test('that existing badges are included in the created zone', () => {
+    const badgeGroup = {...any.simpleObject(), type: 'paragraph'};
+    const nodeIndex = any.integer({max: originalParentChildren.length});
+    const parentChildren = [
+      ...originalParentChildren.slice(0, nodeIndex + 1),
+      badgeGroup,
+      ...originalParentChildren.slice(nodeIndex + 1)
+    ];
 
     assert.equal(
-      replaceMarkers({type: 'html', value: '<!-- consumer badges -->'}, nodeIndex, {children: parentChildren}),
-      nodeIndex + 1
+      replaceMarkerWithZone(
+        {children: parentChildren},
+        nodeIndex,
+        badgeGroupType
+      ),
+      nodeIndex + 2
     );
     assert.deepEqual(
       parentChildren,
       [
         ...originalParentChildren.slice(0, nodeIndex),
-        {type: 'html', value: '<!--consumer-badges start -->'},
-        {type: 'html', value: '<!--consumer-badges end -->'},
+        {type: 'html', value: `<!--${badgeGroupType}-badges start -->`},
+        badgeGroup,
+        {type: 'html', value: `<!--${badgeGroupType}-badges end -->`},
         ...originalParentChildren.slice(nodeIndex + 1)
       ]
     );
-  });
-
-  test('that a legacy contribution marker is replaced by modern zones', () => {
-    const parentChildren = [...originalParentChildren];
-    const nodeIndex = any.integer({max: parentChildren.length});
-
-    assert.equal(
-      replaceMarkers({type: 'html', value: '<!-- contribution badges -->'}, nodeIndex, {children: parentChildren}),
-      nodeIndex + 1
-    );
-    assert.deepEqual(
-      parentChildren,
-      [
-        ...originalParentChildren.slice(0, nodeIndex),
-        {type: 'html', value: '<!--contribution-badges start -->'},
-        {type: 'html', value: '<!--contribution-badges end -->'},
-        ...originalParentChildren.slice(nodeIndex + 1)
-      ]
-    );
-  });
-
-  test('that an unexpected zone is not replaced', () => {
-    const parentChildren = [...originalParentChildren];
-
-    assert.isUndefined(replaceMarkers(
-      {type: 'html', value: `<!-- ${any.word()} badges -->`},
-      any.integer(),
-      {children: parentChildren}
-    ));
-    assert.deepEqual(parentChildren, originalParentChildren);
-  });
-
-  test('that non-html nodes are not modified', () => {
-    assert.isUndefined(replaceMarkers({type: any.word()}));
   });
 });

@@ -1,20 +1,21 @@
-export default function (node, index, parent) {
-  if ('html' === node.type) {
-    const match = node.value.match(/^<!-- (status|consumer|contribution) badges -->$/);
+function nodeIsBadgeGroup(possibleBadgeGroupNode) {
+  return possibleBadgeGroupNode && 'paragraph' === possibleBadgeGroupNode.type;
+}
 
-    if (match) {
-      const badgeGroupType = match[1];
+export default function replaceLegacyMakerWithZone(parent, index, badgeGroupType) {
+  const nextNode = parent.children[index + 1];
+  const existingBadgesArePresent = nodeIsBadgeGroup(nextNode);
+  const modifiedNodeCount = existingBadgesArePresent ? 2 : 1;
 
-      parent.children.splice(
-        index,
-        1,
-        {type: 'html', value: `<!--${badgeGroupType}-badges start -->`},
-        {type: 'html', value: `<!--${badgeGroupType}-badges end -->`}
-      );
+  parent.children.splice(
+    index,
+    modifiedNodeCount,
+    ...[
+      {type: 'html', value: `<!--${badgeGroupType}-badges start -->`},
+      existingBadgesArePresent ? nextNode : undefined,
+      {type: 'html', value: `<!--${badgeGroupType}-badges end -->`}
+    ].filter(Boolean)
+  );
 
-      return index + 1;
-    }
-  }
-
-  return undefined;
+  return index + modifiedNodeCount;
 }
