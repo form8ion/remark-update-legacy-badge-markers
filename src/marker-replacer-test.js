@@ -43,7 +43,7 @@ suite('marker replacer', () => {
 
   test('that existing badges are included in the created zone', () => {
     const badgeGroup = {...any.simpleObject(), type: 'paragraph', children: paragraphChildren};
-    const nodeIndex = any.integer({max: originalParentChildren.length});
+    const nodeIndex = any.integer({max: originalParentChildren.length - 1});
     const parentChildren = [
       ...originalParentChildren.slice(0, nodeIndex + 1),
       badgeGroup,
