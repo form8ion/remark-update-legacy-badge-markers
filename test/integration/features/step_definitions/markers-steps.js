@@ -10,6 +10,7 @@ Given('legacy badge markers exist', async function () {
 
 <!-- contribution badges -->
 ${this.existingContributingBadges}
+${this.existingContributingContent}
 `;
 });
 
@@ -29,6 +30,6 @@ Then('modern badge zones are added', async function () {
 <!--contribution-badges start -->
 ${this.existingContributingBadges}
 <!--contribution-badges end -->
-`
+${this.existingContributingContent}`
   );
 });

@@ -1,5 +1,9 @@
+import nodeIsPartOfBadgeGroup from './predicates/node-is-part-of-badge-group';
+
 function nodeIsBadgeGroup(possibleBadgeGroupNode) {
-  return possibleBadgeGroupNode && 'paragraph' === possibleBadgeGroupNode.type;
+  return possibleBadgeGroupNode
+    && 'paragraph' === possibleBadgeGroupNode.type
+    && possibleBadgeGroupNode.children.every(nodeIsPartOfBadgeGroup);
 }
 
 export default function replaceLegacyMakerWithZone(parent, index, badgeGroupType) {
