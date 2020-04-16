@@ -74,7 +74,7 @@ suite('marker replacer', () => {
   });
 
   test('that content after the marker is not included in the zone if there are no existing badges', () => {
-    const nodeIndex = any.integer({max: originalParentChildren.length});
+    const nodeIndex = any.integer({max: originalParentChildren.length - 1});
     const paragraph = {type: 'paragraph', children: paragraphChildren};
     const parentChildren = [
       ...originalParentChildren.slice(0, nodeIndex + 1),
