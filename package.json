@@ -26,7 +26,6 @@
     "lint:md": "remark . --frail",
     "lint:gherkin": "gherkin-lint",
     "lint:sensitive": "ban",
-    "lint:travis": "travis-lint .travis.yml",
     "lint:peer": "npm ls >/dev/null",
     "test:unit": "nyc run-s test:unit:base",
     "test:unit:base": "DEBUG=any mocha 'src/**/*-test.js'",
@@ -73,8 +72,7 @@
     "rimraf": "3.0.2",
     "rollup": "2.35.1",
     "rollup-plugin-auto-external": "2.0.0",
-    "sinon": "9.2.2",
-    "travis-lint": "1.0.0"
+    "sinon": "9.2.2"
   },
   "dependencies": {
     "unist-util-modify-children": "^2.0.0"
