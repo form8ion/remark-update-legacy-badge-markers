@@ -75,6 +75,6 @@
     "sinon": "11.1.1"
   },
   "dependencies": {
-    "unist-util-modify-children": "^2.0.0"
+    "unist-util-modify-children": "^3.0.0"
   }
 }
