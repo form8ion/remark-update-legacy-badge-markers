@@ -1,4 +1,4 @@
-import {When} from 'cucumber';
+import {When} from '@cucumber/cucumber';
 import remark from 'remark';
 import updateLegacyBadgeMarkers from '../../../../lib/index.cjs';
 

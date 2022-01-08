@@ -1,4 +1,4 @@
-import {Given, Then} from 'cucumber';
+import {Given, Then} from '@cucumber/cucumber';
 import {assert} from 'chai';
 
 Given('legacy badge markers exist', async function () {
