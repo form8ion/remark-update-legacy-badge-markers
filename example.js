@@ -22,7 +22,7 @@ remark()
 <!-- contribution badges -->
 `,
     (err, file) => {
-      fs.writeFileSync(`${process.cwd()}/README.md`, file);
+      fs.writeFileSync(`${process.cwd()}/README.md`, file.contents);
     }
   );
 

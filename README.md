@@ -15,6 +15,8 @@ convention
 * [Usage](#usage)
   * [Installation](#installation)
   * [Example](#example)
+    * [Import](#import)
+    * [Execute](#execute)
 * [Contributing](#contributing)
   * [Dependencies](#dependencies)
   * [Verification](#verification)
@@ -60,7 +62,7 @@ remark()
 <!-- contribution badges -->
 `,
     (err, file) => {
-      fs.writeFileSync(`${process.cwd()}/README.md`, file);
+      fs.writeFileSync(`${process.cwd()}/README.md`, file.contents);
     }
   );
 ```
