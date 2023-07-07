@@ -45,7 +45,7 @@
     "access": "public"
   },
   "dependencies": {
-    "unist-util-modify-children": "^2.0.0"
+    "unist-util-modify-children": "^3.0.0"
   },
   "devDependencies": {
     "@babel/register": "7.22.5",
