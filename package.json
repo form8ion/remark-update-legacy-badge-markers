@@ -42,7 +42,8 @@
     "lib/"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "dependencies": {
     "unist-util-modify-children": "^2.0.0"
