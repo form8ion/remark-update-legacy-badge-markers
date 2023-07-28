@@ -43,7 +43,7 @@ $ npm install @form8ion/remark-update-legacy-badge-markers --save-prod
 #### Import
 
 ```javascript
-import fs from 'fs';
+import fs from 'node:fs';
 import {remark} from 'remark';
 import updateLegacyBadgeMarkers from '@form8ion/remark-update-legacy-badge-markers';
 ```
