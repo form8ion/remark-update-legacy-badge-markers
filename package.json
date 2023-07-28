@@ -11,6 +11,9 @@
   "type": "module",
   "main": "./lib/index.js",
   "exports": "./lib/index.js",
+  "engines": {
+    "node": "^16.14 || >=18"
+  },
   "sideEffects": false,
   "scripts": {
     "clean": "rimraf ./lib",
