@@ -1,5 +1,6 @@
+import modifyChildren from 'unist-util-modify-children';
+
 import markerReplacer from './conditional-marker-replacer';
-import modifyChildren from '../thirdparty-wrappers/unist-util-modify-children';
 
 export default function () {
   const modify = modifyChildren(markerReplacer);
