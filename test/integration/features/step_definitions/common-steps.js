@@ -1,6 +1,8 @@
 import {When} from '@cucumber/cucumber';
 import remark from 'remark';
-import updateLegacyBadgeMarkers from '../../../../lib/index.cjs';
+
+// eslint-disable-next-line import/no-extraneous-dependencies,import/no-unresolved
+import updateLegacyBadgeMarkers from '@form8ion/remark-update-legacy-badge-markers';
 
 When('a node is processed', async function () {
   remark()

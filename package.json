@@ -8,8 +8,9 @@
   "bugs": "https://github.com/form8ion/remark-update-legacy-badge-markers/issues",
   "homepage": "https://npm.im/@form8ion/remark-update-legacy-badge-markers",
   "runkitExampleFilename": "./example.js",
-  "main": "lib/index.cjs.js",
-  "module": "lib/index.es.js",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": "./lib/index.js",
   "sideEffects": false,
   "scripts": {
     "clean": "rimraf ./lib",
@@ -24,7 +25,7 @@
     "test:unit:base": "DEBUG=any vitest run",
     "test:integration": "run-s 'test:integration:base -- --profile noWip'",
     "pretest:integration:base": "npm run build:js",
-    "test:integration:base": "cucumber-js test/integration --profile base",
+    "test:integration:base": "cucumber-js test/integration",
     "test:integration:debug": "DEBUG=test run-s test:integration",
     "test:integration:wip": "run-s 'test:integration:base -- --profile wip'",
     "test:integration:focus": "run-s 'test:integration:base -- --profile focus'",
@@ -49,9 +50,7 @@
     "unist-util-modify-children": "^2.0.0"
   },
   "devDependencies": {
-    "@babel/register": "7.22.5",
     "@cucumber/cucumber": "9.3.0",
-    "@form8ion/babel-preset": "1.6.107",
     "@form8ion/commitlint-config": "1.0.53",
     "@form8ion/eslint-config": "5.0.36",
     "@form8ion/eslint-config-cucumber": "1.4.1",
