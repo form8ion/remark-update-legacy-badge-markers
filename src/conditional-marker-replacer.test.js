@@ -2,8 +2,8 @@ import {afterEach, describe, expect, it, vi} from 'vitest';
 import any from '@travi/any';
 import {when} from 'jest-when';
 
-import replaceMarker from './marker-replacer';
-import conditionallyReplaceMarkers from './conditional-marker-replacer';
+import replaceMarker from './marker-replacer.js';
+import conditionallyReplaceMarkers from './conditional-marker-replacer.js';
 
 vi.mock('./marker-replacer');
 

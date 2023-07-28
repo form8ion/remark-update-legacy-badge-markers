@@ -2,8 +2,8 @@ import {afterEach, describe, expect, it, vi} from 'vitest';
 import any from '@travi/any';
 import {when} from 'jest-when';
 
-import isLineBreak from './node-is-line-break';
-import isNodePartOfBadgeGroup from './node-is-part-of-badge-group';
+import isLineBreak from './node-is-line-break.js';
+import isNodePartOfBadgeGroup from './node-is-part-of-badge-group.js';
 
 vi.mock('./node-is-line-break');
 

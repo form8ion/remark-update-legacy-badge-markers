@@ -1,11 +1,11 @@
-import modifyChildren from 'unist-util-modify-children';
+import {modifyChildren} from 'unist-util-modify-children';
 
 import {afterEach, describe, expect, it, vi} from 'vitest';
 import any from '@travi/any';
 import {when} from 'jest-when';
 
-import markerUpgrader from './conditional-marker-replacer';
-import plugin from './plugin';
+import markerUpgrader from './conditional-marker-replacer.js';
+import plugin from './plugin.js';
 
 vi.mock('unist-util-modify-children');
 

@@ -2,8 +2,8 @@ import {afterEach, describe, expect, it, vi} from 'vitest';
 import any from '@travi/any';
 import {when} from 'jest-when';
 
-import isPartOfNodeGroupPredicate from './predicates/node-is-part-of-badge-group';
-import replaceMarkerWithZone from './marker-replacer';
+import isPartOfNodeGroupPredicate from './predicates/node-is-part-of-badge-group.js';
+import replaceMarkerWithZone from './marker-replacer.js';
 
 vi.mock('./predicates/node-is-part-of-badge-group');
 

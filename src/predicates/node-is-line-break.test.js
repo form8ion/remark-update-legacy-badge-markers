@@ -1,7 +1,7 @@
 import {describe, it, expect} from 'vitest';
 import any from '@travi/any';
 
-import nodeIsLineBreak from './node-is-line-break';
+import nodeIsLineBreak from './node-is-line-break.js';
 
 describe('line-break node', () => {
   it('should return `true` when the node is a line-break', () => {

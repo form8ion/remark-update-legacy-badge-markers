@@ -1,4 +1,4 @@
-import replaceLegacyMakerWithZone from './marker-replacer';
+import replaceLegacyMakerWithZone from './marker-replacer.js';
 
 export default function (node, index, parent) {
   if ('html' === node.type) {
