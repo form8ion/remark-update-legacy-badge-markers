@@ -3,7 +3,7 @@
 import stubbedFs from 'mock-fs';
 import fs from 'fs';
 import remark from 'remark';
-import updateLegacyBadgeMarkers from './lib/index.cjs';
+import updateLegacyBadgeMarkers from './lib/index.js';
 
 // remark-usage-ignore-next
 stubbedFs();

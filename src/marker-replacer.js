@@ -1,4 +1,4 @@
-import nodeIsPartOfBadgeGroup from './predicates/node-is-part-of-badge-group';
+import nodeIsPartOfBadgeGroup from './predicates/node-is-part-of-badge-group.js';
 
 function nodeIsBadgeGroup(possibleBadgeGroupNode) {
   return possibleBadgeGroupNode
