@@ -28,6 +28,7 @@ convention
 [![MIT license][license-badge]][license-link]
 [![npm][npm-badge]][npm-link]
 [![Try on RunKit][runkit-badge]][runkit-link]
+![node][node-badge]
 
 <!--consumer-badges end -->
 
@@ -127,3 +128,5 @@ $ npm test
 [github-actions-ci-link]: https://github.com/form8ion/remark-update-legacy-badge-markers/actions?query=workflow%3A%22Node.js+CI%22+branch%3Amaster
 
 [github-actions-ci-badge]: https://github.com/form8ion/remark-update-legacy-badge-markers/workflows/Node.js%20CI/badge.svg
+
+[node-badge]: https://img.shields.io/node/v/@form8ion/remark-update-legacy-badge-markers?logo=node.js
