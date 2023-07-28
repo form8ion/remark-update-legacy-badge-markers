@@ -44,7 +44,7 @@ $ npm install @form8ion/remark-update-legacy-badge-markers --save-prod
 
 ```javascript
 import fs from 'fs';
-import remark from 'remark';
+import {remark} from 'remark';
 import updateLegacyBadgeMarkers from '@form8ion/remark-update-legacy-badge-markers';
 ```
 
@@ -63,7 +63,7 @@ remark()
 <!-- contribution badges -->
 `,
     (err, file) => {
-      fs.writeFileSync(`${process.cwd()}/README.md`, file.contents);
+      fs.writeFileSync(`${process.cwd()}/README.md`, `${file}`);
     }
   );
 ```

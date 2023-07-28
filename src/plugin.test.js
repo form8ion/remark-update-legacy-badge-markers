@@ -1,4 +1,4 @@
-import modifyChildren from 'unist-util-modify-children';
+import {modifyChildren} from 'unist-util-modify-children';
 
 import {afterEach, describe, expect, it, vi} from 'vitest';
 import any from '@travi/any';

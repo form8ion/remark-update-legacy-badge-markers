@@ -52,14 +52,14 @@
     "provenance": true
   },
   "dependencies": {
-    "unist-util-modify-children": "^2.0.0"
+    "unist-util-modify-children": "^4.0.0"
   },
   "devDependencies": {
     "@cucumber/cucumber": "9.3.0",
     "@form8ion/commitlint-config": "1.0.53",
     "@form8ion/eslint-config": "5.0.36",
     "@form8ion/eslint-config-cucumber": "1.4.1",
-    "@form8ion/remark-lint-preset": "2.0.0",
+    "@form8ion/remark-lint-preset": "5.0.9",
     "@travi/any": "2.1.8",
     "ban-sensitive-files": "1.9.19",
     "c8": "8.0.1",
@@ -74,8 +74,8 @@
     "mock-fs": "5.2.0",
     "npm-run-all": "4.1.5",
     "publint": "0.2.0",
-    "remark": "13.0.0",
-    "remark-cli": "9.0.0",
+    "remark": "14.0.3",
+    "remark-cli": "11.0.0",
     "remark-toc": "8.0.1",
     "remark-usage": "10.0.1",
     "rimraf": "5.0.1",

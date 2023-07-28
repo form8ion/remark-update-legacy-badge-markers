@@ -1,4 +1,4 @@
-import modifyChildren from 'unist-util-modify-children';
+import {modifyChildren} from 'unist-util-modify-children';
 
 import markerReplacer from './conditional-marker-replacer.js';
 
